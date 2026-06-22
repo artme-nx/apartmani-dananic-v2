@@ -691,7 +691,7 @@ form .btn{justify-self:start;margin-top:6px;padding:15px 36px}
   if(reduce){return;} /* skip motion entirely */
 
   /* ---- Lenis smooth scroll ---- */
-  var lenis=new Lenis({duration:1.15,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},smoothWheel:true});
+  var lenis=new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
   function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
   /* sync to gsap ticker */
   if(window.gsap){
